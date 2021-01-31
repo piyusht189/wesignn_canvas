@@ -1,0 +1,123 @@
+<div style="background: #e2e2e2;height: 100vh;
+overflow: hidden;">
+  
+    <!--Header ToolBar-->
+    <div style="border-bottom: 1px solid #1c87c5;">
+        <div style="margin: auto;width: fit-content;display: flex;padding: 15px;">
+         <div><i class="fa fa-search-plus fa-icon-header"></i></div>
+         <div><i class="fa fa-search-minus fa-icon-header"></i></div>
+         <div><i class="fa fa-download fa-icon-header"></i></div>
+         <div><i class="fa fa-print fa-icon-header"></i></div>
+         <div><i class="fa fa-rotate-left fa-icon-header"></i></div>
+         <div><i class="fa fa-rotate-right fa-icon-header"></i></div>
+       </div>
+    </div>
+    <!--Main container-->
+    <div style="display: flex;margin-top: 20px;overflow-y: scroll;position: relative;">
+        <!--Left Container Toolbox-->
+        <div  style="width: 20%;position: fixed;left: 0;top:80px;
+        overflow-y: scroll;
+        height: 100vh;">
+            <div style="    width: 60%;
+            float: right;">
+                <p>FIELDS</p>
+                <hr size = "1" style="    border: 2px solid #a2a2a2;
+                width: 100%;
+                margin: 10px auto;">
+                <div class="elementbox" #cloneDraggable elementval = "signature">
+                  <i class="fa fa-pencil"></i> Signature
+                </div>
+                <div class="elementbox" #cloneDraggable elementval = "initial">
+                  <i class="fa fa-trademark"></i> Initial
+                </div>
+                <div class="elementbox" #cloneDraggable elementval = "stamp">
+                  <i class="fa fa-gg-circle"></i> Stamp
+                </div>
+                <div class="elementbox" #cloneDraggable elementval = "date_signed">
+                  <i class="fa fa-calendar"></i> Date Signed
+                </div>
+                <hr size = "1" style="    border: 1px solid #a2a2a2;
+                width: 85%;
+                margin: 10px auto;">
+                <div class="elementbox" #cloneDraggable elementval = "full_name">
+                  <i class="fa fa-user-o"></i> Name
+                </div>
+                <div class="elementbox" #cloneDraggable elementval = "first_name">
+                  <i class="fa fa-user-circle-o"></i> First Name
+                </div>
+                <div class="elementbox" #cloneDraggable elementval = "last_name">
+                  <i class="fa fa-user-circle"></i> Last Name
+                </div>
+                <div class="elementbox" #cloneDraggable elementval = "email">
+                  <i class="fa fa-envelope"></i> Email Address
+                </div>
+                <div class="elementbox" #cloneDraggable elementval = "company">
+                  <i class="fa fa-building"></i> Company
+                </div>
+                <div class="elementbox" #cloneDraggable elementval = "title">
+                  <i class="fa fa-suitcase"></i> Title
+                </div>
+                <hr size = "1" style="    border: 1px solid #a2a2a2;
+                width: 85%;
+                margin: 10px auto;">
+                <div class="elementbox" #cloneDraggable elementval = "plain_text">
+                  <i class="fa fa-file-text"></i> Text
+                </div>
+                <div class="elementbox" #cloneDraggable elementval = "checkbox">
+                  <i class="fa fa-check-square"></i> Checkbox
+                </div>
+            </div>
+        </div>
+
+        <!--Centeer Container Canvas-->
+        <div style="width: 56%;position: relative;
+        height: 100vh;
+        border: 1px solid #a0a0a0;
+        margin-right: 2%;
+        margin-left: 22%;">
+                    <pdf-viewer #canvasContainer1 class="restrict_container" [src]="pdfSrc" 
+                    [render-text]="true"
+                    [fit-to-page]="true"
+                    [autoresize]="true"
+                    [original-size]="false"
+                    style="display: block;"
+                     ></pdf-viewer>
+      
+            <div style="position: absolute;
+            top: 0;">
+              <div class="drag_container" #canvasContainer>
+              </div>
+            </div>
+        </div>
+
+        <!--Right Container Toolbox-->
+        <div  style="width: 20%;">
+        <button (click)="collectData()">Get Data</button>
+        </div>
+    </div>
+</div>
+
+
+
+<ngx-smart-modal #stampoptions identifier="stampoptions" class="short">
+  <h1 style="color:#da0000">Stamp Options</h1>
+ 
+  <button  style="background: #129a2d;
+  color: #fff;
+  padding: 7px 20px;
+  font-size: 1em;
+  margin-right: 10px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;">Send Verification Link</button>
+  <button (click)="stampoptions.close()" style="background: #c7c7c7;
+  color: #525252;
+  padding: 7px 20px;
+  font-size: 1em;
+  margin-right: 10px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;">Cancel</button>
+</ngx-smart-modal>

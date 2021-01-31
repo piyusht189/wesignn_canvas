@@ -1,0 +1,105 @@
+<div class="mploarea loginpage">
+  <div class="lt_logpop">
+  <div class="rtmaib">
+    <h2>Start your email marketing</h2>
+    <p>Enhance your business with mailpod marketing tools.</p>
+    <div class="vmbtn"> <img src="../../../assets/images/rtbglog.png" alt="img" /> </div>
+    </div>
+  </div>
+  <div class="logincont" style="padding: 30px 50px 0;">
+    <div class="log_poparea" style="height: 100%;">
+      <div class="ftitle" style="margin-bottom: 25px;">
+        <h3><img src="../../../assets/images/mailpod.png" alt="logo" style="cursor: pointer;" (click)="openHome()"/></h3>
+        <p>Need a Mailpod account? <a href="/register">Create an account</a> </p>
+      </div>
+      
+        <ul *ngIf="!forgotmode" class="rmiform">
+        <form>
+          <li>
+            <div class="form-fieldz">
+              <input type="text" [class.not_empty]="email" name="email" class="rmfield" id="email" [(ngModel)]="email"/>
+              <label class="labelreg" for="email">Email or User ID</label>
+              <div class="brd_ico user"></div>
+              <p class="invalid" *ngIf="submitted && !email">(x) Please fill this field!</p>
+            </div>
+          </li>
+          <li>
+            <div class="form-fieldz" style="position: relative;">
+              <input [attr.type]="!showpassword ? 'password' : 'text'" [class.not_empty]="password" name="password" class="rmfield" id="password"  [(ngModel)]="password"/>
+              <div style="margin: auto;
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              right: 0;"><i *ngIf="showpassword" (click)="showpassword = false" class="fa fa-eye" style="position: absolute;right: 15px;top: 30px;font-size: 1.7em;color: #1591e1;"></i>
+              <i *ngIf="!showpassword" (click)="showpassword = true" class="fa fa-eye-slash" style="font-size: 1.7em;
+              color: #94b2c6;
+              position: relative;
+              top: 50%;
+              transform: translateY(-50%);
+              float: right;
+              margin-right: 10px;"></i></div>
+              <label class="labelreg" for="password">Password</label>
+              <div class="brd_ico pw"></div>
+              <p class="invalid" *ngIf="submitted && !password">(x) Please fill this field!</p>
+            </div>
+          </li>
+          <li>
+          <div class="flogk">
+          <div class="chboxl">
+          	<input id="chys" type="checkbox" />
+            <label for="chys" class="klog">Keep me logged in </label> 
+            </div>
+            <a class="fpss" href="javascript:void(0)" (click)="forgotmode = true">Forgot Password?</a>
+            </div>
+          </li>
+          <li>
+            <input type="submit" name="name" value="Log In" class="sbtbtn" (click)="login()" />
+          </li>
+          </form>
+        </ul>
+
+
+        <div *ngIf="forgotmode" class="ftitle" style="margin-top: -30px;margin-top: -30px;
+        margin-bottom: 30px;">
+          <p style="font-size: 1.7em;
+          font-weight: 400;">Reset your password</p>
+        </div>
+        <ul *ngIf="forgotmode" class="rmiform">
+          <form>
+            <li>
+              <div class="form-fieldz">
+                <input type="text" [class.not_empty]="femail" name="femail" class="rmfield" id="femail" [(ngModel)]="femail"/>
+                <label class="labelreg" for="femail">Enter Email</label>
+                <div class="brd_ico user"></div>
+                <p class="invalid" *ngIf="submitted1 && !femail">(x) Please fill this field!</p>
+              </div>
+            </li>
+            <li>
+                <div class="double_btn">
+                    <div class="btnone">
+                      <input type="submit" name="name" value="Send Reset Link" class="sbtbtn"  (click)="reset()" />
+                      </div>
+                      <div class="btntwo">
+                      <input type="submit" name="name" value="Cancel" class="canbtn"  (click)="forgotmode = false"/>
+                      </div>
+                      </div>      
+            </li>
+            </form>
+          </ul>
+
+          <div class="dwnlapp_area">
+            <h3 style="text-align: left;">Download App Today!</h3>
+            <p style="text-align: left;">Marketing Platform for Small and Medium Business | Email Delivery Services for small And Medium Business</p>
+           <div class="btnapp" style="text-align: left;">
+           <a href="https://apps.apple.com/us/app/id1516348363" target="_blank"><img src="https://mailpod.com/assets/images_dev/prefooter-appstore-icon.svg" alt="MailPod iOS App" /></a>
+           <a  href="https://play.google.com/store/apps/details?id=com.amcrest.mailpod&hl=en_US" target="_blank"><img src="https://mailpod.com/assets/images_dev/prefooter-googleplay-icon.svg" alt="MailPod Android App" /></a>
+           </div>
+            </div>
+
+          
+            <div class="ftroar">Copyright © 2020. | <a href="/privacy">Privacy Policy</a> | <a href="/contact">Contact Us</a> </div>
+ 
+     
+    </div>
+  </div>
+</div>

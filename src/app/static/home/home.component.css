@@ -1,0 +1,27 @@
+drag-scroll {
+    height: auto;
+    min-height: 300px;
+    width: 100%;
+  }
+  .yesreview{
+    display: inline-block;height: fit-content;
+    max-width: 270px;
+    min-width: 270px;
+    border: 1px solid #87c0ef;
+    -webkit-box-shadow:8px 6px 7px -4px #aad9f7;
+    -moz-box-shadow: 8px 6px 7px -4px #aad9f7;
+    box-shadow: 8px 6px 7px -4px #aad9f7;
+    margin: 0px 10px;
+    padding: 25px;
+    border-radius: 20px;
+  }
+  .noreview{
+    display: inline-block; height: fit-content;
+    max-width: 170px;
+    min-width: 170px;
+    background: #ffffff00;
+    border: 1px solid #87c0ef00;
+    margin: 0px 10px;
+    padding: 25px;
+    border-radius: 20px;
+  }
