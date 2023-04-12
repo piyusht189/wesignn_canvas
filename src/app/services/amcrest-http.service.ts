@@ -26,7 +26,7 @@ export class AmcrestHttpService {
     public baseUrl: string;
 
     constructor(public notify: notifyService, public router: Router, public http: HttpClient, public rootstore: Store<RootReducer.State>) {
-        this.baseUrl = 'https://api.mailpod.com/';
+        this.baseUrl = 'API URL';
     }
 
     /**
